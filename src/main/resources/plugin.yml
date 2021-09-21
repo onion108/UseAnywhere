@@ -2,3 +2,8 @@ main: MainClass
 version: 0.0
 name: UseAnywhere
 api-version: 1.13
+
+commands:
+  use:
+    usage: /use
+    description: Use the thing in the mainhand.

@@ -18,7 +18,7 @@ class MainClass : JavaPlugin(), Listener {
     }
 
     @EventHandler
-    fun onInteract(e: PlayerInteractEvent) {
+    fun onInteract(e: PlayerInteractEvent?) {
         val player = e?.player ?: return
         if(player.inventory.itemInMainHand.type == Material.CRAFTING_TABLE) {
             val craftingTable = Bukkit.createInventory(null, InventoryType.CRAFTING, "Mobile Crafting")
