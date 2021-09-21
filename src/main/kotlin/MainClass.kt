@@ -6,7 +6,6 @@ import org.bukkit.event.inventory.InventoryType
 import org.bukkit.event.player.PlayerInteractEvent
 import org.bukkit.inventory.Inventory
 import org.bukkit.plugin.java.JavaPlugin
-import java.awt.Container
 
 class MainClass : JavaPlugin(), Listener {
     override fun onEnable() {
@@ -20,7 +19,7 @@ class MainClass : JavaPlugin(), Listener {
 
     @EventHandler
     fun onInteract(e: PlayerInteractEvent) {
-        val player = e.player
+        val player = e?.player ?: return
         if(player.inventory.itemInMainHand.type == Material.CRAFTING_TABLE) {
             val craftingTable = Bukkit.createInventory(null, InventoryType.CRAFTING, "Mobile Crafting")
             player.openInventory(craftingTable)
